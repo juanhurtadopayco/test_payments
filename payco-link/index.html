@@ -9,6 +9,8 @@
   </head>
   <body>
 
+    <label for="publicKey">Public Key</label>
+    <input type="text" name="publicKey" id="publicKey">    
     <label for="cobroId">cobroId</label>
     <input type="text" name="cobroId" id="cobroId">
     <button type="button" id="button"  onclick="openCheckout()">Open Checkout</button>
@@ -21,10 +23,13 @@
     <script>
     const openCheckout = function () {
 
+      
+      const publicKey = document.getElementById("publicKey").value;
       const cobroId = document.getElementById("cobroId").value;
 
         const handler = ePayco.checkout.configure({
-        key: '2f48ea347518e2f96a6592f6a07ee4dd',
+        //key: '2f48ea347518e2f96a6592f6a07ee4dd',
+        key: publicKey,
         test: true
         })
         
