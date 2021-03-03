@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<htmllang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible"content="IE=edge" />
+    <title>Payco - Link</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+  </head>
+  <body>
+
+   
+    <button type="button" id="button"  onclick="openCheckout()">Open Checkout</button>
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.preprod.js"> </script>
+    <script>
+    const openCheckout = function () {
+
+        const handler = ePayco.checkout.configure({
+        key: 'a9cad5b6911b2406e84d49a239b93d0d',
+        test: true
+        })
+        
+        let data = {
+            amount: 100000,
+            confirmation: "https://epayco.co",
+            country: "co",
+            currency: "cop",
+            description: "Prueba Split Payment",
+            invoice: "PSP01-" + new Date().getTime(),
+            lang: "es",
+            name: "Compra factura #"+ new Date().getTime(),
+            response: "https://epayco.co",
+            tax: 0,
+            tax_base: 0,
+             // Splitpayment
+            split_app_id:"28750",
+            split_merchant_id:"28750",
+            split_type:"01",
+            split_primary_receiver:"28750",
+            split_primary_receiver_fee:"20000",
+            splitpayment:"true",
+            split_rule:"multiple",
+            split_receivers: [
+                { 
+                    "id": "9375", 
+                    "total": "30000", 
+                    "fee": "1" },
+                { 
+                    "id": "76926", 
+                    "total": "50000", 
+                    "fee": "1" 
+                }
+            ],
+        }
+        handler.open(data)
+    }
+    </script>
+</body>
+</html>
