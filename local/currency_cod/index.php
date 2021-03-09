@@ -13,11 +13,12 @@ $p_signature = md5($p_cust_id_cliente.'^'.$p_key.'^'.$p_id_invoice.'^'.$p_amount
 <input name="p_key" type="hidden" value="<?php echo $p_key ?>">
 <input name="p_id_invoice" type="hidden" value="<?php echo $p_id_invoice ?>">
 <input name="p_description" type="hidden" value="ePayco Test">
-Tipos Moneda
+<h3>Tipos Moneda</h3>
 <ul>
   <li>cop o COP</li>
   <li>usd o USD</li>
 </ul>
+</br>
 <input name="p_currency_code" type="text">
 <input name="p_amount" id="p_amount" type="hidden" value="<?php echo $p_amount ?>">
 <input name="p_tax" id="p_tax" type="hidden" value="0">

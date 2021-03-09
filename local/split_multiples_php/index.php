@@ -37,11 +37,12 @@ $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split
 <input name="p_id_invoice" type="hidden" value="<?php  echo $p_id_invoice ?>">
 <input name="p_description" type="hidden" value="<?php  echo $p_description ?>">
 <input name="p_currency_code" type="text">
-Tipos Moneda
+<h3>Tipos Moneda</h3>
 <ul>
-<li>cop o COP</li>
-<li>usd o USD</li>
+  <li>cop o COP</li>
+  <li>usd o USD</li>
 </ul>
+</br>
 <input name="p_amount" id="p_amount" type="hidden" value="<?php echo $p_amount ?>">
 <input name="p_tax" id="p_tax" type="hidden" value="0">
 <input name="p_amount_base" id="p_amount_base" type="hidden" value="0">
