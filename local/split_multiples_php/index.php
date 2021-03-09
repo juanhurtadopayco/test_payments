@@ -1,25 +1,25 @@
 <?php
 $p_id_invoice=time();
-$p_cust_id_cliente='9375';//Id del comercio propietario de la aplicación
-$p_key='150d566ec5d77654b0f08bed14bee7f423a8c04a';//p_key del comercio propietario de la aplicación
-$p_amount='2';
+$p_cust_id_cliente='28750';//Id del comercio propietario de la aplicación
+$p_key='af04fefb93b097b697b1ebf39fd656eb1e29a40a';//p_key del comercio propietario de la aplicación
+$p_amount='200000';
 $p_tax="0";
 $p_base="0";
-$p_currency_code='USD';
+$p_currency_code='cop';
 $p_description = 'Prueba Split Payment PHP';
 
 $p_signature= md5($p_cust_id_cliente.'^'.$p_key.'^'.$p_id_invoice.'^'.$p_amount.'^'.$p_currency_code);
 
 $p_split_type='01';// 01 Fijo | 02 Porcentual
-$p_split_merchant_receiver='9375';//Id Comercio dueño del producto o servicio
-$p_split_primary_receiver='9375';//Id del cliente recibidor primario (App, Maketplace, Tienda, etc)
+$p_split_merchant_receiver='28750';//Id Comercio dueño del producto o servicio
+$p_split_primary_receiver='28750';//Id del cliente recibidor primario (App, Maketplace, Tienda, etc)
 $p_split_primary_receiver_fee='20000';//Comisión del recibidor primario (App,Maketplace,Tienda,etc)
 $p_split_receivers=array();
 //$p_signature_receivers Y $p_split_receivers SOLO ES NECESARIO SI SON MÁS DE UN RECIBIDOR 
 $p_signature_receivers="";
 $p_split_receivers = array(
-    array('id'=>'41755','fee'=>'30000'),
-    array('id'=>'9695','fee'=>'50000')
+    array('id'=>'76926','fee'=>'30000'),
+    array('id'=>'9375','fee'=>'50000')
 );
 
 foreach($p_split_receivers as $receiver){
@@ -30,12 +30,13 @@ $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split
 
 ?>
 
-<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="http://localhost:8001/splitpayments" target="_blank">
+<!--<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="http://localhost:8000/splitpayments" target="_blank">-->
+<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure2.epayco.io/splitpayments.php" target="_blank">
     <input name="p_cust_id_cliente" type="hidden" value="<?php echo $p_cust_id_cliente ?>">
     <input name="p_key" type="hidden" value="<?php echo $p_key ?>">
     <input name="p_id_invoice" type="hidden" value="<?php  echo $p_id_invoice ?>">
     <input name="p_description" type="hidden" value="<?php  echo $p_description ?>">
-    <input name="p_currency_code" type="hidden" value="USD">
+    <input name="p_currency_code" type="hidden" value="cop">
     <input name="p_amount" id="p_amount" type="hidden" value="<?php echo $p_amount ?>">
     <input name="p_tax" id="p_tax" type="hidden" value="0">
     <input name="p_amount_base" id="p_amount_base" type="hidden" value="0">
