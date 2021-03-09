@@ -35,5 +35,6 @@ $p_signature = md5($p_cust_id_cliente.'^'.$p_key.'^'.$p_id_invoice.'^'.$p_amount
 <input name="p_billing_email"type="hidden" id="p_billing_email" value="admin@payco.co" />
 <input name="p_billing_phone"type="hidden" id="p_billing_phone" value="0000000" />
 <input name="p_billing_cellphone"type="hidden" id="p_billing_cellphone" value="0000000000" />
+</br>
 <input type="image" id="imagen" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
 </form>
