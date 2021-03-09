@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Split Pasarela Antigua</title>
+    </head>
+   
+    <body>
+        <div id="payment">
+         
+          	<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure2.epayco.io/splitpayments.php" target="_blank">
+            <p>p_cust_id_cliente</p>
+            <input name="p_cust_id_cliente" type="text" v-model="pCustIdCliente">
+
+            <p>p_key</p>
+            <input name="p_key" type="text" v-model="pKey">
+
+            <p>invoiceId</p>
+            <input name="p_id_invoice" type="text" :value="invoiceId" readonly>
+
+			<p>p_description</p>
+            <input name="p_description" type="text" :value="'Split Pasarela Antigua ' + invoiceId" readonly>
+            <h3>Tipos Moneda</h3>
+            <ul>
+              <li>cop o COP</li>
+              <li>usd o USD</li>
+            </ul>
+            </br>
+            <input name="p_currency_code" v-model="pCurrencyCode" type="text">
+			<p>p_amount</p>
+            <input name="p_amount" id="p_amount" v-model="pAmount" type="text" >
+			
+			<p>p_signature</p>
+            <input name="p_signature" type="text" :value="signature" readonly />
+
+            <input name="p_tax" id="p_tax" type="hidden" value="0">
+            <input name="p_amount_base" id="p_amount_base" type="hidden" v-model="pAmount">
+            <input name="p_test_request" type="hidden" value="TRUE">
+            <input name="p_url_response" type="hidden" value="https://domain.com/response">
+            <input name="p_url_confirmation" type="hidden" value="">
+			
+			<!-- Split Information-->
+			<p>p_split_type</p>
+			<input name="p_split_type" type="text" v-model="pSplitType" readonly>
+
+			<p>p_split_merchant_receiver</p>
+			<input name="p_split_merchant_receiver" v-model="pSplitMerchantReceiver" type="text" readonly>
+
+			<p>p_split_primary_receiver</p>
+			<input name="p_split_primary_receiver" v-model="pSplitPrimaryReceiver" type="text" readonly>
+			
+			<p>p_split_primary_receiver_fee</p>
+			<input name="p_split_primary_receiver_fee" type="text" v-model="pSplitPrimaryReceiverFee" readonly>
+
+			<p>_split_receivers[0][id]</p>
+			<input name="p_split_receivers[0][id]" type="text" v-model="pSplitReceiversId" readonly>
+			<p>p_split_receivers[0][fee]</p>
+			<input name="p_split_receivers[0][fee]" type="text" v-model="pSplitReceiversFee" readonly> 
+			
+			<!--<input name="p_signature_split" type="hidden" value="<?php echo $p_signature_split ?>">-->
+			</br>
+            <input type="image" id="imagen" alt="Boton ePayco" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
+            </form>
+
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+        <script>
+            var shopping = new Vue({
+                el: '#payment',
+                data: {
+					pCustIdCliente: '28750',
+					pKey: 'af04fefb93b097b697b1ebf39fd656eb1e29a40a',
+					pCurrencyCode: 'COP',
+					pAmount: 5000,
+					pSplitType: '01',
+					pSplitMerchantReceiver: '28750',
+					pSplitPrimaryReceiver: '28750',
+					pSplitPrimaryReceiverFee: '20000',
+					pSplitReceiversId : '76926',
+					pSplitReceiversFee : '30000'
+
+                },
+                computed: {
+                    invoiceId(){						
+                      return Date.now()
+                    },
+					signature(){
+						return CryptoJS.MD5(`${this.pCustIdCliente}^${this.pKey}^${this.invoiceId}^${this.pAmount}^${this.pCurrencyCode}`);
+					}
+                },
+                methods: {
+                    
+                }
+            })
+        </script>
+    </body>
+</html>
