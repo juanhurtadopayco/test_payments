@@ -7,14 +7,18 @@ $p_currency_code = "cop";
 $p_signature = md5($p_cust_id_cliente.'^'.$p_key.'^'.$p_id_invoice.'^'.$p_amount.'^'.$p_currency_code);
 ?>
 
-
 <!--<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="http://localhost:8000/checkout" target="_blank">-->
 <form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure2.epayco.io/checkout.php" target="_blank">
 <input name="p_cust_id_cliente" type="hidden" value="<?php echo $p_cust_id_cliente ?>">
 <input name="p_key" type="hidden" value="<?php echo $p_key ?>">
 <input name="p_id_invoice" type="hidden" value="<?php echo $p_id_invoice ?>">
 <input name="p_description" type="hidden" value="ePayco Test">
-<input name="p_currency_code" type="hidden" value="cop">
+Tipos Moneda
+<ul>
+  <li>cop o COP</li>
+  <li>usd o USD</li>
+</ul>
+<input name="p_currency_code" type="text">
 <input name="p_amount" id="p_amount" type="hidden" value="<?php echo $p_amount ?>">
 <input name="p_tax" id="p_tax" type="hidden" value="0">
 <input name="p_amount_base" id="p_amount_base" type="hidden" value="<?php echo $p_amount ?>">

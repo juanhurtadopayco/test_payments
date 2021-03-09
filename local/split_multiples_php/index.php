@@ -32,24 +32,29 @@ $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split
 
 <!--<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="http://localhost:8000/splitpayments" target="_blank">-->
 <form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure2.epayco.io/splitpayments.php" target="_blank">
-    <input name="p_cust_id_cliente" type="hidden" value="<?php echo $p_cust_id_cliente ?>">
-    <input name="p_key" type="hidden" value="<?php echo $p_key ?>">
-    <input name="p_id_invoice" type="hidden" value="<?php  echo $p_id_invoice ?>">
-    <input name="p_description" type="hidden" value="<?php  echo $p_description ?>">
-    <input name="p_currency_code" type="hidden" value="cop">
-    <input name="p_amount" id="p_amount" type="hidden" value="<?php echo $p_amount ?>">
-    <input name="p_tax" id="p_tax" type="hidden" value="0">
-    <input name="p_amount_base" id="p_amount_base" type="hidden" value="0">
-    <input name="p_test_request" type="hidden" value="true">
-    <input name="p_url_response" type="hidden" value="">
-    <input name="p_url_confirmation" type="hidden" value="">
-    <input name="p_signature" type="hidden" id="signature"  value="<?php echo $p_signature ?>" />
-    <input name="p_split_type" type="hidden" value="<?php echo $p_split_type ?>">
-    <input name="p_split_merchant_receiver" type="hidden" value="<?php echo $p_split_merchant_receiver ?>">
-    <input name="p_split_primary_receiver" type="hidden" value="<?php echo $p_split_primary_receiver ?>">
-    <input name="p_split_primary_receiver_fee" type="hidden" value="<?php echo $p_split_primary_receiver_fee ?>">
-    <input name="p_split_receivers[0][id]" type="hidden" value="<?php echo $p_split_receivers[0]['id'] ?>">
-    <input name="p_split_receivers[0][fee]" type="hidden" value="<?php echo $p_split_receivers[0]['fee'] ?>"> 
-    <input name="p_signature_split" type="hidden" value="<?php echo $p_signature_split ?>">
-    <input type="image" id="imagen" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
+<input name="p_cust_id_cliente" type="hidden" value="<?php echo $p_cust_id_cliente ?>">
+<input name="p_key" type="hidden" value="<?php echo $p_key ?>">
+<input name="p_id_invoice" type="hidden" value="<?php  echo $p_id_invoice ?>">
+<input name="p_description" type="hidden" value="<?php  echo $p_description ?>">
+<input name="p_currency_code" type="text">
+Tipos Moneda
+<ul>
+<li>cop o COP</li>
+<li>usd o USD</li>
+</ul>
+<input name="p_amount" id="p_amount" type="hidden" value="<?php echo $p_amount ?>">
+<input name="p_tax" id="p_tax" type="hidden" value="0">
+<input name="p_amount_base" id="p_amount_base" type="hidden" value="0">
+<input name="p_test_request" type="hidden" value="true">
+<input name="p_url_response" type="hidden" value="">
+<input name="p_url_confirmation" type="hidden" value="">
+<input name="p_signature" type="hidden" id="signature"  value="<?php echo $p_signature ?>" />
+<input name="p_split_type" type="hidden" value="<?php echo $p_split_type ?>">
+<input name="p_split_merchant_receiver" type="hidden" value="<?php echo $p_split_merchant_receiver ?>">
+<input name="p_split_primary_receiver" type="hidden" value="<?php echo $p_split_primary_receiver ?>">
+<input name="p_split_primary_receiver_fee" type="hidden" value="<?php echo $p_split_primary_receiver_fee ?>">
+<input name="p_split_receivers[0][id]" type="hidden" value="<?php echo $p_split_receivers[0]['id'] ?>">
+<input name="p_split_receivers[0][fee]" type="hidden" value="<?php echo $p_split_receivers[0]['fee'] ?>"> 
+<input name="p_signature_split" type="hidden" value="<?php echo $p_signature_split ?>">
+<input type="image" id="imagen" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
 </form>
