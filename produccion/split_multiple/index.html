@@ -21,8 +21,8 @@
     const openCheckout = function () {
 
         const handler = ePayco.checkout.configure({
-        key: '2f48ea347518e2f96a6592f6a07ee4dd',
-        test: true
+            key: '2f48ea347518e2f96a6592f6a07ee4dd',
+            test: true
         })
         
         let data = {
@@ -37,17 +37,29 @@
             response: "https://epayco.co",
             tax: 0,
             tax_base: 0,
-             // Splitpayment
-            split_app_id:"9375",
-            split_merchant_id:"9375",
+            // Splitpayment
+            split_app_id:"33487",
+            split_merchant_id:"33487",
             split_type:"01",
-            split_primary_receiver:"9375",
+            split_primary_receiver:"33487",
             split_primary_receiver_fee:"10000",
             splitpayment:"true",
             split_rule:"multiple",
             split_receivers: [
-                { "id": "9695", "total": "59500", "iva": "9500", "base_iva": "50000", "fee": "0" },
-                { "id": "8976", "total": "59500", "iva": "9500", "base_iva": "50000", "fee": "0" }
+                { 
+                    "id": "30085", 
+                    "total": "59500", 
+                    "iva": "0", 
+                    "base_iva": "0", 
+                    "fee":  "0" 
+                },
+                { 
+                    "id": "69205", 
+                    "total": "59500", 
+                    "iva": "0", 
+                    "base_iva": "0", 
+                    "fee": "0" 
+                }
             ],
         }
         handler.open(data)
