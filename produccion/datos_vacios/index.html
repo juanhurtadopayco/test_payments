@@ -16,12 +16,12 @@
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.preprod.js"> </script>
+    <script type="text/javascript" src="https://checkout.epayco.co/checkout.js"> </script>
     <script>
     const openCheckout = function () {
 
         const handler = ePayco.checkout.configure({
-        key: '2f48ea347518e2f96a6592f6a07ee4dd',
+        key: 'b3a73874cf3b69f9c8b80b737ebbaf8c',
         test: false
         })
         
@@ -37,7 +37,6 @@
             confirmation: "http://codigoatomico.com/payments/produccion/estado_pse/confirmation.php",
             tax: 0,
             tax_base: 0,
-            external: "true",
             //Atributos cliente
             name_billing: "Andres Perez",
             address_billing: "Carrera 19 numero 14 91",
