@@ -1,0 +1,28 @@
+ <!-- <form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure.payco.co/splitpayments.php" target="_blank"> -->
+<h3 class="checkoutH3">Haga clic sobre el botón de “Pagar con ePayco” para ir a la plataforma segura de pago.</h3>
+<!--<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure.payco.co/splitpayments.php" target="_blank" class="formularioEpayco">-->
+<form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://localhost/splitpayments" target="_blank" class="formularioEpayco">
+    <input name="p_cust_id_cliente" type="hidden" value="491027">
+    <input name="p_key" type="hidden" value="1fff045cec8d5bff2f8740662199dc74f8e6e612">
+    <input name="p_id_invoice" type="hidden" value="20105">
+    <input name="p_description" type="hidden" value="Café_Tostión_Media_Alta_Molido340g_-_Medio">
+    <input name="p_amount" id="p_amount" type="hidden" value="40000">
+    <input name="p_amount_base" id="p_amount_base" type="hidden" value="0">
+    <input name="p_tax" id="p_tax" type="hidden" value="0">
+    <input type="hidden" name="p_email" value="">
+    <input name="p_currency_code" type="hidden" value="COP">
+    <input name="p_signature" type="hidden" id="signature" value="e4ec128711841b6ce182cbda547252c4" />
+    <input name="p_test_request" type="hidden" value="false">
+    <input name="p_split_type" type="hidden" value="03">
+    <input name="p_split_merchant_receiver" type="hidden" value="491027">
+    <input name="p_split_primary_receiver" type="hidden" value="491027">
+    <input name="p_split_primary_receiver_fee" type="hidden" value="0">
+    <input name="p_url_response" type="hidden" value="https://comprocafedecolombia.com/?wc-api=WC_ePayco&order_id=20105">
+    <input name="p_url_confirmation" type="hidden" value="https://comprocafedecolombia.com/?wc-api=WC_ePayco&order_id=20105&confirmation=1">
+
+    <input name="p_split_receivers[0][id]" type="hidden" value="498657">
+    <input name="p_split_receivers[0][fee]" type="hidden" value="40000">
+    
+    <input name="p_signature_split" type="hidden" value="f91e05b580d088622143a5b2d93a6fc2">
+    <input type="image" id="imagen" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
+</form>

@@ -16,13 +16,14 @@
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.preprod.js"> </script>
+    <!-- <script type="text/javascript" src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.preprod.js"> </script> -->
+    <script type="text/javascript" src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.testing.js"> </script>
     <script>
     const openCheckout = function () {
 
         const handler = ePayco.checkout.configure({
         key: '2f48ea347518e2f96a6592f6a07ee4dd',
-        test: false
+        test: true
         })
         
         let data = {
@@ -31,13 +32,13 @@
             country: "co",
             currency: "cop",
             description: "Prueba Datos Vacios",
-            invoice: "PDV01-" + new Date().getTime(),
+            invoice: "PDV01" +new Date().getTime(),
             lang: "es",
             name: "Prueba Datos Vacios #" +new Date().getTime(),response: "http://codigoatomico.com/payments/produccion/estado_pse/response.php",
             confirmation: "http://codigoatomico.com/payments/produccion/estado_pse/confirmation.php",
             tax: 0,
             tax_base: 0,
-            external: "true",
+            external: "false",
             //Atributos cliente
             name_billing: "Andres Perez",
             address_billing: "Carrera 19 numero 14 91",

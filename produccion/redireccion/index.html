@@ -22,7 +22,7 @@
 
         const handler = ePayco.checkout.configure({
         key: '2f48ea347518e2f96a6592f6a07ee4dd',
-        test: true
+        test: false
         })
         
         let data = {
@@ -30,10 +30,10 @@
             confirmation: "https://epayco.co",
             country: "co",
             currency: "cop",
-            description: "Prueba Redireccion Fallida",
+            description: "Prueba 2'''$$**'  Redireccion Fallida",
             invoice: "PRF01-" + new Date().getTime(),
             lang: "es",
-            name: "Prueba Redireccion Fallida #" +new Date().getTime(),
+            name: "Prueba 2'''$$**' Redireccion Fallida #" +new Date().getTime(),
             response: "https://epayco.co",
             tax: 0,
             tax_base: 0
