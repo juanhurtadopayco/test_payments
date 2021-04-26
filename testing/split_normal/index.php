@@ -2,7 +2,7 @@
 $p_id_invoice=time();
 $p_cust_id_cliente='9375';//Id del comercio propietario de la aplicación
 $p_key='150d566ec5d77654b0f08bed14bee7f423a8c04a';//p_key del comercio propietario de la aplicación
-$p_amount='8000';
+$p_amount='10000';
 $p_tax="0";
 $p_base="0";
 $p_currency_code='COP';
@@ -18,7 +18,7 @@ $p_split_receivers=array();
 //$p_signature_receivers Y $p_split_receivers SOLO ES NECESARIO SI SON MÁS DE UN RECIBIDOR 
 $p_signature_receivers="";
 $p_split_receivers = array(
-    array('id'=>'41755','fee'=>'4000'),
+    array('id'=>'41755','fee'=>'30'),
     array('id'=>'9695','fee'=>'50000')
 );
 
@@ -46,9 +46,10 @@ $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split
     <input name="p_split_type" type="hidden" value="<?php echo $p_split_type ?>">
     <input name="p_split_merchant_receiver" type="hidden" value="<?php echo $p_split_merchant_receiver ?>">
     <input name="p_split_primary_receiver" type="hidden" value="<?php echo $p_split_primary_receiver ?>">
-    <input name="p_split_primary_receiver_fee" type="hidden" value="0">
+    <input name="p_split_primary_receiver_fee" type="hidden" value="70">
     <input name="p_split_receivers[0][id]" type="hidden" value="<?php echo $p_split_receivers[0]['id'] ?>">
-    <input name="p_split_receivers[0][fee]" type="hidden" value="<?php echo $p_split_receivers[0]['fee'] ?>"> 
+    <input name="p_split_receivers[0][fee]" type="hidden" value="<?php echo $p_split_receivers[0]['fee'] ?>">
+    
     <input name="p_signature_split" type="hidden" value="<?php echo $p_signature_split ?>">
     <input type="image" id="imagen" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
 </form>
