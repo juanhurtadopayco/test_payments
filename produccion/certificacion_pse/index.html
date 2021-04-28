@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<htmllang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Prueba Datos Vacios</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    </head>
+
+    <body>
+        <label for="">Comercio Agregador</label> </br>
+        <label for="">ID: 33487</label></br>
+        <button type="button" id="button" onclick="openCheckout('b3a73874cf3b69f9c8b80b737ebbaf8c', 'true')">Checkout Testing</button>
+        </br>
+    </br>
+        <button type="button" id="button" onclick="openCheckout('b3a73874cf3b69f9c8b80b737ebbaf8c', 'false')">Checkout Production</button>
+        </br>
+
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script type="text/javascript"
+            src="https://checkout.epayco.co/checkout.js"> </script>
+        <script>
+            const openCheckout = function (publicKey, testing) {
+
+                let test = testing === 'true' ? true : false;
+                const handler = ePayco.checkout.configure({
+                    key: publicKey,
+                    test
+                })
+
+                let data = {
+                    amount: 5000,
+                    confirmation: "https://epayco.co",
+                    country: "co",
+                    currency: "cop",
+                    description: "Pago PSE Certificacion",
+                    invoice: "FACTURA PSE: " + new Date().getTime(),
+                    lang: "es",
+                    name: "Pago PSE Certificacion " + new Date().getTime(),
+                    response: "https://epayco.co",
+                    tax: 0,
+                    tax_base: 0,
+                    //Atributos cliente
+                    name_billing: "Juan Pablo Hurtado Ramirez",
+                    address_billing: "Calle 137 sur #47 - 15",
+                    type_doc_billing: "cc",
+                    mobilephone_billing: "3113627287",
+                    number_doc_billing: "1026150220"
+                }
+                handler.open(data)
+            }
+        </script>
+    </body>
+
+    </html>
