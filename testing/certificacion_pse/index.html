@@ -16,20 +16,24 @@
         </br>
         <label for="">ID: 1</label>
         </br>
-        <button type="button" id="button" onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'true')">Checkout Testing</button>
+        <button type="button" id="button" onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'true', 'true')">Checkout Testing External</button>
+        <button type="button" id="button" onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'true', 'false')">Checkout Testing</button>
         </br>
         </br>
-        <button type="button" id="button" onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'false')">Checkout Production</button>
+        <button type="button" id="button" onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'false', 'true')">Checkout Production External</button>
+        <button type="button" id="button" onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'false', 'false')">Checkout Production</button>
         </br>
         </br>
 
 
         <label for="">Comercio Agregador</label> </br>
         <label for="">ID: 41756</label></br>
-        <button type="button" id="button" onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'true')">Checkout Testing</button>
+        <button type="button" id="button" onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'true', 'true')">Checkout Testing External</button>
+        <button type="button" id="button" onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'true','false')">Checkout Testing</button>
         </br>
-    </br>
-        <button type="button" id="button" onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'false')">Checkout Production</button>
+        </br>
+        <button type="button" id="button" onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'false', 'true')">Checkout Production External</button>
+        <button type="button" id="button" onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'false','false')">Checkout Production</button>
         </br>
 
 
@@ -38,7 +42,7 @@
         <script type="text/javascript"
             src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.testing.js"> </script>
         <script>
-            const openCheckout = function (publicKey, testing) {
+            const openCheckout = function (publicKey, testing, external) {
 
                 let test = testing === 'true' ? true : false;
                 const handler = ePayco.checkout.configure({
@@ -58,6 +62,7 @@
                     response: "https://epayco.co",
                     tax: 0,
                     tax_base: 0,
+                    external: "true",
                     //Atributos cliente
                     name_billing: "John Doe",
                     address_billing: "Carrera 19 numero 14 91",
