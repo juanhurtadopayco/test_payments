@@ -16,8 +16,9 @@ const openCheckout = function (publicKey, testing, external) {
         description: fieldValue("descripcion") ? fieldValue("descripcion") : "Pago PSE Certificacion",
         invoice: fieldValue("factura") ? fieldValue("factura") : "FACTURA PSE: " + new Date().getTime(),   
         amount: fieldValue("monto") ? fieldValue("monto") : 5000,
-        tax: 0,
-        tax_base: 0,
+        tax: fieldValue("taxt") ? fieldValue("taxt") :0,
+        tax_base: fieldValue("tax_base") ? fieldValue("tax_base") :0,
+        tax_ico: fieldValue("tax_ico") ? fieldValue("tax_ico") :0,
         
         //Configuracion
         lang: "es",
