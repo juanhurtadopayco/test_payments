@@ -1,59 +1,173 @@
-<!DOCTYPE html>
-<htmllang="en">
+<!doctype html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Prueba Datos Vacios</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-    </head>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-        <label for="">Comercio Agregador</label> </br>
-        <label for="">ID: 33487</label></br>
-        <button type="button" id="button" onclick="openCheckout('b3a73874cf3b69f9c8b80b737ebbaf8c', 'true')">Checkout Testing</button>
-        </br>
-    </br>
-        <button type="button" id="button" onclick="openCheckout('b3a73874cf3b69f9c8b80b737ebbaf8c', 'false')">Checkout Production</button>
-        </br>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Certificacion PSE</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Configuración</h5>
+
+                <div class="container px-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3">
+                                <div class="mb-3">
+                                    <label for="monto" class="form-label">LLave publica</label>
+                                    <input type="text" class="form-control" id="llaves" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Llaves publicas de un comercio cualquiera
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Nombre del pago</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Descripcion</label>
+                                    <input type="text" class="form-control" id="descripcion"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Descripcion del pago</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Factura</label>
+                                    <input type="text" class="form-control" id="factura" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Nombre de Factura</div>
+                                </div>
 
 
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-        <script type="text/javascript"
-            src="https://checkout.epayco.co/checkout.js"> </script>
-        <script>
-            const openCheckout = function (publicKey, testing) {
+                            </div>
+                        </div>
+                        <div class="col">
+                          
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar monto</label>
+                                <input type="number" class="form-control" id="monto" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Valor de la transacción</div>
+                            </div>
 
-                let test = testing === 'true' ? true : false;
-                const handler = ePayco.checkout.configure({
-                    key: publicKey,
-                    test
-                })
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar base iva</label>
+                                <input type="number" class="form-control" id="tax_base" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Valor de base iva</div>
+                            </div>
 
-                let data = {
-                    amount: 5000,
-                    confirmation: "https://epayco.co",
-                    country: "co",
-                    currency: "cop",
-                    description: "Pago PSE Certificacion",
-                    invoice: "FACTURA PSE: " + new Date().getTime(),
-                    lang: "es",
-                    name: "Pago PSE Certificacion " + new Date().getTime(),
-                    response: "https://epayco.co",
-                    tax: 0,
-                    tax_base: 0,
-                    //Atributos cliente
-                    name_billing: "Juan Pablo Hurtado Ramirez",
-                    address_billing: "Calle 137 sur #47 - 15",
-                    type_doc_billing: "cc",
-                    mobilephone_billing: "3113627287",
-                    number_doc_billing: "1026150220"
-                }
-                handler.open(data)
-            }
-        </script>
-    </body>
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar iva</label>
+                                <input type="number" class="form-control" id="tax" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Valor de iva</div>
+                            </div>
 
-    </html>
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar base ico</label>
+                                <input type="number" class="form-control" id="tax_ico" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Valor de base ico</div>
+                            </div>
+                            <div class="p-3  ">
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="dolares">
+                                    <label class="form-check-label" for="dolares">Pagar en dolares?</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Despliegue de checkout</h5>
+                <div class="container px-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3  ">
+                                <h6>Comercio Gateway</h6>
+                                <span class="badge bg-secondary">ID: 1</span>
+                                <span class="badge bg-secondary">PublicKey: 08d5f52606fafda0e1dd0a64147e90ca</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Testing</h6>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'true', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'true', 'false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Produccion</h6>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'false', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('08d5f52606fafda0e1dd0a64147e90ca', 'false', 'false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container px-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Comercio Agregador</h6>
+                                <span class="badge bg-secondary">ID: 41756</span>
+                                <span class="badge bg-secondary">PublicKey: af53f761453860472c77f85b59fccc9a</span>
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Testing</h6>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'true', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'true','false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Produccion</h6>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'false', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('af53f761453860472c77f85b59fccc9a', 'false','false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://checkout.epayco.co/checkout.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

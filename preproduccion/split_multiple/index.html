@@ -35,27 +35,9 @@
             lang: "es",
             name: "Compra factura #"+ new Date().getTime(),
             response: "https://epayco.co",
+            confirmation: "urlmagento",
             tax: 0,
             tax_base: 0,
-             // Splitpayment
-            split_app_id:"28750",
-            split_merchant_id:"28750",
-            split_type:"01",
-            split_primary_receiver:"28750",
-            split_primary_receiver_fee:"20000",
-            splitpayment:"true",
-            split_rule:"multiple",
-            split_receivers: [
-                { 
-                    "id": "9375", 
-                    "total": "30000", 
-                    "fee": "1" },
-                { 
-                    "id": "76926", 
-                    "total": "50000", 
-                    "fee": "1" 
-                }
-            ],
         }
         handler.open(data)
     }
