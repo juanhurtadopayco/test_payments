@@ -102,10 +102,43 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Despliegue de checkout</h5>
+
                 <div class="container px-4">
                     <div class="row gx-5">
                         <div class="col">
-                            <div class="p-3  ">
+                            <div class="p-3">
+                                <h6>Comercio Gateway Movistar</h6>
+                                <span class="badge bg-secondary">ID: 1</span>
+                                <span class="badge bg-secondary">PublicKey: 479f29cc87cb26bdea89e873b5287784</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Testing</h6>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('479f29cc87cb26bdea89e873b5287784', 'true', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('479f29cc87cb26bdea89e873b5287784', 'true', 'false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Produccion</h6>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('479f29cc87cb26bdea89e873b5287784', 'false', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('479f29cc87cb26bdea89e873b5287784', 'false', 'false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container px-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3">
                                 <h6>Comercio Gateway</h6>
                                 <span class="badge bg-secondary">ID: 1</span>
                                 <span class="badge bg-secondary">PublicKey: 08d5f52606fafda0e1dd0a64147e90ca</span>
