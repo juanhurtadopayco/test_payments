@@ -28,7 +28,7 @@ foreach($p_split_receivers as $receiver){
 $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split_primary_receiver.'^'.$p_split_primary_receiver_fee.'^'.$p_signature_receivers);
 
 ?>
-
+<h3>ID Comercio: 33487</h3>
 <form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure.payco.co/splitpayments.php" target="_blank">
     <input name="p_cust_id_cliente" type="hidden" value="<?php echo $p_cust_id_cliente ?>">
     <input name="p_key" type="hidden" value="<?php echo $p_key ?>">

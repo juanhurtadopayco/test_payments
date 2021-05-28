@@ -29,6 +29,7 @@ $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split
 
 ?>
 
+<h3>ID Comercio: 28750</h3>
 <form id="frm_botonePayco" name="frm_botonePayco" method="post" action="https://secure2.epayco.io/splitpayments.php" target="_blank">
     <input name="p_cust_id_cliente" type="hidden" value="<?php echo $p_cust_id_cliente ?>">
     <input name="p_key" type="hidden" value="<?php echo $p_key ?>">
