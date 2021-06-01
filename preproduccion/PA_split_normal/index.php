@@ -17,10 +17,9 @@ $p_split_receivers=array();
 //$p_signature_receivers Y $p_split_receivers SOLO ES NECESARIO SI SON MÁS DE UN RECIBIDOR 
 $p_signature_receivers="";
 $p_split_receivers = array(
-    array('id'=>'9375','fee'=>'50000'),
-    array('id'=>'76926','fee'=>'50000')
+    array('id'=>'9375','fee'=>'20'),
+    array('id'=>'76926','fee'=>'30')
 );
-
 foreach($p_split_receivers as $receiver){
     $p_signature_receivers.=$receiver['id'].'^'.$receiver['fee'];
 }
@@ -48,6 +47,10 @@ $p_signature_split=md5($p_split_type.'^'.$p_split_merchant_receiver.'^'.$p_split
     <input name="p_split_primary_receiver" type="hidden" value="<?php echo $p_split_primary_receiver ?>">
     <label for="p_split_primary_receiver_fee">p_split_primary_receiver_fee</label>
     <input name="p_split_primary_receiver_fee" type="number"></br>
+    <input name="p_split_receivers[0][id]" type="hidden" value="<?php echo $p_split_receivers[0]['id'] ?>">
+    <input name="p_split_receivers[0][fee]" type="hidden" value="<?php echo $p_split_receivers[0]['fee'] ?>"> 
+    <input name="p_split_receivers[1][id]" type="hidden" value="<?php echo $p_split_receivers[1]['id'] ?>">
+    <input name="p_split_receivers[1][fee]" type="hidden" value="<?php echo $p_split_receivers[1]['fee'] ?>">
     <input name="p_signature_split" type="hidden" value="<?php echo $p_signature_split ?>">
     <input type="image" id="imagen" src="https://369969691f476073508a-60bf0867add971908d4f26a64519c2aa.ssl.cf5.rackcdn.com/btns/btn1.png" />
 </form>
