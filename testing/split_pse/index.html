@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Certificacion PSE</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="card">
+            
+            <div class="card-body">              
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div>
+                        <strong>Ambiente Checkout: </strong>Testing => <a href="https://epayco-checkout-testing.s3.amazonaws.com/checkout.testing.js" target="_blank">https://epayco-checkout-testing.s3.amazonaws.com/checkout.testing.js</a>
+                        <br>
+                        <strong>Base de datos: </strong>Testing
+                    </div>
+                </div>
+
+                <h5 class="card-title">Configuración</h5>
+                <pre>
+                    amount: "116000"
+                    tax_base: "93960"
+                    tax: "22040"
+
+                    //Splitpayment
+                    splitpayment: "true",
+                    split_app_id: "9375",
+                    split_merchant_id: "9375",
+                    split_type: "02", //01 fijo, 02 porcentaje
+                    split_primary_receiver: "9375",
+                    split_primary_receiver_fee: "0",
+                    split_rule: "multiple",
+                    split_receivers: [
+                        {  
+                            id: "41755",
+                            total: "56000",
+                            iva: "10640",
+                            base_iva: "45360",
+                            fee: "5"
+                        },
+                        { 
+                            id: "9695", 
+                            total: "60000", 
+                            iva: "11400", 
+                            base_iva: "48600", 
+                            fee: "0" 
+                        }
+                    ]
+                </pre>
+                <div class="container px-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3">
+                                <div class="mb-3">
+                                    <label for="monto" class="form-label">LLave publica</label>
+                                    <input type="text" class="form-control" id="llaves" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Llaves publicas de un comercio cualquiera
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Nombre del pago</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Descripcion</label>
+                                    <input type="text" class="form-control" id="descripcion"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Descripcion del pago</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Factura</label>
+                                    <input type="text" class="form-control" id="factura" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">Nombre de Factura</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col">
+                          
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar monto</label>
+                                <input type="number" class="form-control" id="monto" aria-describedby="emailHelp" value="116000">
+                                <div id="emailHelp" class="form-text">Valor de la transacción</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar base iva</label>
+                                <input type="number" class="form-control" id="tax_base" aria-describedby="emailHelp" value="93960">
+                                <div id="emailHelp" class="form-text">Valor de base iva</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar iva</label>
+                                <input type="number" class="form-control" id="tax" aria-describedby="emailHelp" value="22040">
+                                <div id="emailHelp" class="form-text">Valor de iva</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Ingresar base ico</label>
+                                <input type="number" class="form-control" id="tax_ico" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">Valor de base ico</div>
+                            </div>
+                            <div class="p-3  ">
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="dolares">
+                                    <label class="form-check-label" for="dolares">Pagar en dolares?</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Despliegue de checkout</h5>
+                <div class="container px-4">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Comercio Agregador Preprod Split (Testing)</h6>
+                                <span class="badge bg-secondary">ID: 9375</span>
+                                <span class="badge bg-secondary">PublicKey: 2f48ea347518e2f96a6592f6a07ee4dd</span>
+        
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Testing</h6>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('2f48ea347518e2f96a6592f6a07ee4dd', 'true', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-warning"
+                                    onclick="openCheckout('2f48ea347518e2f96a6592f6a07ee4dd', 'true','false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3">
+                                <h6>Checkout Produccion</h6>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('2f48ea347518e2f96a6592f6a07ee4dd', 'false', 'true')">External</button>
+                                <button type="button" id="button" class="btn btn-success"
+                                    onclick="openCheckout('2f48ea347518e2f96a6592f6a07ee4dd', 'false','false')">One
+                                    Page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://epayco-checkout-testing.s3.amazonaws.com/checkout.testing.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+    </symbol>
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </symbol>
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </symbol>
+  </svg>
+</html>

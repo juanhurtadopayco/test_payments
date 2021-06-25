@@ -30,12 +30,12 @@ const openCheckout = function (publicKey, testing, external) {
 
 
         //Atributos cliente
-        name_billing: "John Doe",
+        name_billing: "Juan Pablo Hurtado Payco",
         address_billing: "Carrera 19 numero 14 91",
         type_doc_billing: "cc",
         mobilephone_billing: "3050000000",
-        number_doc_billing: "100000000",
-        
+        number_doc_billing: "1026154320",
+
         //Splitpayment
         splitpayment: "true",
         split_app_id: "9375", // id comercio que recibe el dinero 
